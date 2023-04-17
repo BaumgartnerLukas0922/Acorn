@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Artist{
+    + name: String
+}
+class Song{
+    + title: String
+    + raw_lyrics: String
+    + avg_duration: Int
+    + artist: Artist
+}
+class ChordSheet{
+    + song: Song
+    + sheet: String
+}
+
+Artist "1"<--"n" Song
+Song "1"<--"n" ChordSheet
+
+
+@enduml
