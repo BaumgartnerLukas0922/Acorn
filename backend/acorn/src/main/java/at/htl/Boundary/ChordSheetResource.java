@@ -78,6 +78,8 @@ public class ChordSheetResource {
     }
 
     @DELETE
+    @Transactional
+    @Produces(MediaType.APPLICATION_JSON)
     public Response delete(@QueryParam("id") Long id){
         csRepo.delete("id", id);
         return Response.ok().build();
