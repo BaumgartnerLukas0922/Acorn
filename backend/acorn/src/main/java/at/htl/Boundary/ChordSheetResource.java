@@ -77,4 +77,10 @@ public class ChordSheetResource {
         return Response.ok().build();
     }
 
+    @DELETE
+    public Response delete(@QueryParam("id") Long id){
+        csRepo.delete("id", id);
+        return Response.ok().build();
+    }
+
 }
